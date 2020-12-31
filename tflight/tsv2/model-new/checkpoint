@@ -1,0 +1,2 @@
+model_checkpoint_path: "/home/huihui/tflight/tsv2/model-new/pcc_model_new.ckpt"
+all_model_checkpoint_paths: "/home/huihui/tflight/tsv2/model-new/pcc_model_new.ckpt"
