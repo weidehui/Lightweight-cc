@@ -61,7 +61,7 @@ def prune_layer(policy,model_path,args=get_args()):
         data[...] = torch.from_numpy(w)
         pruned_weights.append(data)
     pruned_weights.append(weights[layers[-1]])
-    new_state_dict = OrderedDict()/home/huihui/tflight
+    new_state_dict = OrderedDict()
     torch.save(model.state_dict(),'parameter.pth')
     for l, pw in zip(layers, pruned_weights):
         new_state_dict[l] = pw

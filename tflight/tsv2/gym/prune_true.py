@@ -8,10 +8,10 @@ import numpy as np
 from scipy import sparse
 from afprunenetwork import StuMlpPolicy
 from stable_baselines import PPO1
-from tsv2.common.simple_arg_parse import arg_or_default
+from tflight.tsv2.common.simple_arg_parse import arg_or_default
 
-checkpoint_path = os.path.join("/home/huihui/tflight/tsv2/model-pb", "pcc_model_1.ckpt")
-meta_path = os.path.join("/home/huihui/tflight/tsv2/model-pb", "pcc_model_1.ckpt.meta")
+checkpoint_path = os.path.join("/home/huihui/Lightweight-cc/tflight/tsv2/big-model/data", "pcc_model_8.ckpt")
+meta_path = os.path.join("/home/huihui/Lightweight-cc/tflight/tsv2/big-model/data", "pcc_model_8.ckpt.meta")
 
 saver = tf.train.import_meta_graph(meta_path)
 
@@ -111,7 +111,7 @@ with model.graph.as_default():
             sess.run(v.assign(temp[i]))
             i+=1
 
-        saver.save(sess, "/home/huihui/tflight/tsv2/model-new/pcc_model_new.ckpt")
+        saver.save(sess, "/home/huihui/Lightweight-cc/tflight/tsv2/model-new/pcc_model_new.ckpt")
 
 
 

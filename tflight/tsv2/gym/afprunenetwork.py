@@ -1,9 +1,10 @@
 from stable_baselines.common.policies import FeedForwardPolicy
-from tsv2.common.simple_arg_parse import arg_or_default
-arch=[32,16]
+from tflight.tsv2.common.simple_arg_parse import arg_or_default
+arch=[32,32,32,16]
 pruning_perc=25
-arch[0]=arch[0]-8
-arch[1]=arch[1]-4
+for i in range(len(arch)):
+    arch[i]=int(arch[i]*(1-pruning_perc/100))
+#print(arch)
 
 class StuMlpPolicy(FeedForwardPolicy):
     def __init__(self, sess, ob_space, ac_space, n_env, n_steps, n_batch, reuse=False, **_kwargs):
